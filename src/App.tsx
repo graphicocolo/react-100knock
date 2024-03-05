@@ -1,11 +1,8 @@
-// import { useState } from 'react'
 import './App.css'
 import { Greeting } from '@/components/Greeting'
-import { Counter } from './components/Counter'
+import { Counter } from './components/organisms/calculation/Counter'
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <>
       <Greeting />

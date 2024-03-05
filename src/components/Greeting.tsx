@@ -1,7 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
-export const Greeting = () => {
+import { memo } from 'react'
+
+export const Greeting = memo(() => {
   // 書き方その1 CSS と全く同じ記述ができる
   const titleStyle = css`
   color: #d80075;
@@ -13,4 +15,4 @@ export const Greeting = () => {
       <p css={titleStyle}>Hello World!</p>
     </>
   )
-}
+})
