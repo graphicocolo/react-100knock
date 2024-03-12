@@ -28,7 +28,7 @@ padding: 0;
 line-height: 1.2;
 `
 
-// export const IncDec = memo((props: Props) => {
+// export const IncDec = memo((props: Props) => { ①がセットで必要 冒頭のtype指定も必要
 // 別の書き方
 // export const IncDec = memo((props: { init: number }) => { ①がセットで必要 冒頭のtype指定は不要
 // export const IncDec = memo(({ init }: { init: number }) => { ①は不要 冒頭のtype指定も不要

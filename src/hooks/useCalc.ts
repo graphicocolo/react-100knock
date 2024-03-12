@@ -1,3 +1,5 @@
+// カウンター用カスタムフック
+
 import { useState } from "react";
 
 type Props = {
