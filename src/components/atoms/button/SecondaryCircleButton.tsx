@@ -4,6 +4,7 @@
 // JSX pragma
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
+import { memo } from 'react'
 import { BaseCircleButton } from "@/components/atoms/button/BaseCircleButton"
 
 type SecondaryCircleButtonProps = {
@@ -17,11 +18,11 @@ export const SButton = css`
   color: #222;
 `
 
-export const SecondaryCircleButton = (props: SecondaryCircleButtonProps) => {
+export const SecondaryCircleButton = memo((props: SecondaryCircleButtonProps) => {
   const { children, onClick } = props
   return (
     <>
       <button onClick={onClick} css={SButton}>{children}</button>
     </>
   )
-}
+})

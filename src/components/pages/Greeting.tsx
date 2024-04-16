@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { Link } from 'react-router-dom'
 
 import { memo } from 'react'
 
@@ -12,7 +13,10 @@ export const Greeting = memo(() => {
 
   return (
     <>
+      <h1>Greeting ページです</h1>
       <p css={titleStyle}>Hello World!</p>
+      {/* <p><Link to='/'>Topへ</Link></p> */}
+      <p><Link to={`/`}>Homeへ</Link></p>
     </>
   )
 })
