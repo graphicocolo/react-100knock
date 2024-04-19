@@ -1,6 +1,6 @@
 import { memo } from "react"
 import { IncDec } from "@/components/molecules/calculation/IncDec"
-import { CalcBackground } from "@/components/atoms/background/CalcBackground"
+import { CalcBackground } from "@/components/templates/calculation/CalcBackground"
 
 type Props = {
   init: number

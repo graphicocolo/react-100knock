@@ -26,6 +26,7 @@ margin: 0;
 margin-bottom: 3rem;
 padding: 0;
 line-height: 1.2;
+text-align: center;
 `
 
 // export const IncDec = memo((props: Props) => { ①がセットで必要 冒頭のtype指定も必要
