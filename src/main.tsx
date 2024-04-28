@@ -1,17 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { css, Global } from "@emotion/react"
+import { Global } from "@emotion/react"
 import 'normalize.css'
-
 import { RouterProvider } from 'react-router-dom'
-import { RoutesLink } from '@/settings/RoutesLink'
 
-const globalStyle = css`
-  body {
-    font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI",Helvetica, Arial, sans-serif;
-  }
-`
+import { globalStyle } from '@/settings/GlobalStyes'
+import { RoutesLink } from '@/settings/RoutesLink'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

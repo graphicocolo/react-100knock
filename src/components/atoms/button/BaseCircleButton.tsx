@@ -12,6 +12,7 @@ export const BaseCircleButton = css`
   padding: 0;
   border: none;
   font-size: 2rem;
+  cursor: pointer;
   & > span {
     display: inline-block;
     position: absolute;

@@ -13,6 +13,7 @@ export const BaseSquareButton = css`
   border: none;
   font-size: 1rem;
   text-align: center;
+  cursor: pointer;
   /* & > span {
     display: inline-block;
     position: absolute;

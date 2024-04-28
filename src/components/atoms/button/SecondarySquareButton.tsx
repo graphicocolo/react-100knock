@@ -7,22 +7,24 @@ import { css } from "@emotion/react"
 import { memo } from 'react'
 import { BaseSquareButton } from "@/components/atoms/button/BaseSquareButton"
 
-type PrimarySquareButtonProps = {
+type SecondarySquareButtonProps = {
   children: React.ReactNode
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const pbutton = css`
   ${BaseSquareButton}
-  background-color: #016ac1;
+  background-color: #858585;
   color: #fff;
 `
 
-export const PrimarySquareButton = memo((props: PrimarySquareButtonProps) => {
+export const SecondarySquareButton = memo((props: SecondarySquareButtonProps) => {
   const { children, onClick } = props
+  // const { children } = props
   return (
     <>
       <button onClick={onClick} css={pbutton}>{children}</button>
+      {/* <button css={pbutton}>{children}</button> */}
     </>
   )
 })
