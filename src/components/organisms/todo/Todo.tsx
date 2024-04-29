@@ -3,6 +3,7 @@
 import { memo } from 'react'
 
 import { PrimaryCheckbox } from '@/components/atoms/form/PrimaryCheckbox'
+import { useTodo } from '@/hooks/useTodo';
 
 type Props = {
   todo: {
@@ -22,29 +23,13 @@ type Props = {
   }[]) => void
 }
 
-type Todos = {
-  id: number;
-  task: string;
-  completed: boolean;
-}[];
-
 export const Todo = memo((props: Props) => {
   const { todo, todos, setTodos } = props
-  const toggleTodo = (e: React.MouseEvent<HTMLLabelElement>) => {
-    e.stopPropagation()
-    e.preventDefault()
-    const newtodos: Todos = todos.map((todo) => {
-      if (todo.id === todo.id) {
-        todo.completed = !todo.completed
-      }
-      return todo;
-    });
-    setTodos(newtodos)
-  }
+  const { clickCheckbox } = useTodo({ todos, setTodos })
 
   return (
     <>
-      <PrimaryCheckbox todo={todo} todos={todos} setTodos={setTodos} onClick={(e) => toggleTodo(e)}>{todo.task}</PrimaryCheckbox>
+      <PrimaryCheckbox todo={todo} todos={todos} setTodos={setTodos} onClick={(e) => clickCheckbox(e, todo.id)}>{todo.task}</PrimaryCheckbox>
     </>
   )
 })
