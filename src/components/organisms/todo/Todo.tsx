@@ -4,6 +4,7 @@ import { memo } from 'react'
 
 import { PrimaryCheckbox } from '@/components/atoms/form/PrimaryCheckbox'
 import { useTodo } from '@/hooks/useTodo';
+import { TodoDeleteButton } from '@/components/atoms/button/TodoDeleteButton';
 
 type Props = {
   todo: {
@@ -25,11 +26,12 @@ type Props = {
 
 export const Todo = memo((props: Props) => {
   const { todo, todos, setTodos } = props
-  const { clickCheckbox } = useTodo({ todos, setTodos })
+  const { clickCheckbox, deleteTodo } = useTodo({ todos, setTodos })
 
   return (
     <>
       <PrimaryCheckbox todo={todo} todos={todos} setTodos={setTodos} onClick={(e) => clickCheckbox(e, todo.id)}>{todo.task}</PrimaryCheckbox>
+      <TodoDeleteButton onClick={() => deleteTodo(todo.id)}>削除</TodoDeleteButton>
     </>
   )
 })

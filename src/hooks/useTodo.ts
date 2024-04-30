@@ -38,7 +38,7 @@ export const useTodo = (props: Props) => {
     setTodos([...todos, newTodo])
   }
 
-  // チェックボックス機能
+  // 完了機能(チェックボックス)
   const clickCheckbox = (e: React.MouseEvent<HTMLLabelElement>, id: number) => {
     e.stopPropagation()
     e.preventDefault()
@@ -46,11 +46,24 @@ export const useTodo = (props: Props) => {
       if (t.id === id) {
         t.completed = !t.completed
       }
-      return t;
-    });
+      return t
+    })
     setTodos(newtodos)
-    // console.log(todos)
   }
 
-  return { todos, addTodo, clickCheckbox }
+  // 削除機能
+  const deleteTodo = (id: number) => {
+    // 配列を全て走査するため負荷が大きい
+    // const newtodos: Todos = todos.filter(todo => todo.id !== id)
+    // setTodos(newtodos)
+
+    const index = todos.findIndex(todo => todo.id === id);
+    if (index !== -1) {
+      const newTodos = [...todos];
+      newTodos.splice(index, 1);
+      setTodos(newTodos);
+    }
+  }
+
+  return { todos, addTodo, clickCheckbox, deleteTodo }
 }

@@ -1,9 +1,12 @@
 // TODO List タスク追加
 
+// JSX pragma
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react"
 import { memo, useRef } from 'react'
 
-import { PrimaryInputText } from "@/components/atoms/form/PrimaryInputText"
-import { PrimarySquareButton } from "@/components/atoms/button/PrimarySquareButton"
+import { TodoInputText } from "@/components/atoms/form/TodoInputText"
+import { TodoAddButton } from "@/components/atoms/button/TodoAddButton"
 import { useTodo } from "@/hooks/useTodo"
 
 type Props = {
@@ -19,6 +22,10 @@ type Props = {
   }[]) => void
 }
 
+const Wrap = css`
+  margin: 1rem 0 2rem;
+`
+
 export const AddTodo = memo((props: Props) => {
   const { todos, setTodos } = props
   const taskText = useRef<HTMLInputElement>(null)
@@ -33,9 +40,9 @@ export const AddTodo = memo((props: Props) => {
 
   return (
     <>
-      <div>
-        <PrimaryInputText ref={taskText} placeholder='タスクを入力' />
-        <PrimarySquareButton onClick={onClickAdd}>追加</PrimarySquareButton>
+      <div css={Wrap}>
+        <TodoInputText ref={taskText} placeholder='タスクを入力' />
+        <TodoAddButton onClick={onClickAdd}>追加</TodoAddButton>
       </div>
     </>
   );

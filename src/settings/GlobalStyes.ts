@@ -13,7 +13,16 @@ body {
 *, *::before, *::after {
   box-sizing: border-box;
 }
-input[type='text'],
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+
+/* form default reset */
+/* input[type='text'], */
 input[type='email'],
 input[type='file'],
 input[type='submit'] {
@@ -27,7 +36,7 @@ input[type='submit'] {
   font: inherit;
   border: 1px solid rgba(0, 0, 0, 0.16);
 }
-input[type='text']:focus,
+/* input[type='text']:focus, */
 input[type='email']:focus {
   outline: 2px solid #3498db;
   outline-offset: 0;

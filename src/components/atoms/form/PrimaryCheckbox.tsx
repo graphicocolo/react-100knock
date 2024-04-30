@@ -35,6 +35,7 @@ const LabelStyle = css`
 const TextStyle = css`
   ${text}
   ${BaseCheckboxAfter}
+  font-size: 1.125rem;
 `
 
 export const PrimaryCheckbox = memo((props: Props) => {

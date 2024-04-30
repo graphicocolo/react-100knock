@@ -30,6 +30,7 @@ type Todo = {
 
 export const Todo = () => {
   const [todos, setTodos] = useState<Todo[]>([])
+  // console.log(todos)
 
   return (
     <div>
@@ -39,8 +40,8 @@ export const Todo = () => {
           <TodoElementCenter>
             <AddTodo todos={todos} setTodos={setTodos} />
           </TodoElementCenter>
+          <TodoList todos={todos} setTodos={setTodos} />
         </TodoContent>
-        <TodoList todos={todos} setTodos={setTodos} />
       </TodoBackground>
       <p><Link to={`/`}>Homeへ</Link></p>
     </div>

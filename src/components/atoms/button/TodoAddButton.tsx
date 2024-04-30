@@ -5,26 +5,25 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
 import { memo } from 'react'
-import { BaseSquareButton } from "@/components/atoms/button/BaseSquareButton"
+// import { BaseSquareButton } from "@/components/atoms/button/BaseSquareButton"
+import { PrimarySquareButton } from "@/components/atoms/button/PrimarySquareButton"
 
-type SecondarySquareButtonProps = {
+type TodoAddButtonProps = {
   children: React.ReactNode
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
-const pbutton = css`
-  ${BaseSquareButton}
-  background-color: #858585;
-  color: #fff;
+const Button = css`
+  ${PrimarySquareButton}
+  height: 35px;
+  margin: 0 10px;
 `
 
-export const SecondarySquareButton = memo((props: SecondarySquareButtonProps) => {
+export const TodoAddButton = memo((props: TodoAddButtonProps) => {
   const { children, onClick } = props
-  // const { children } = props
   return (
     <>
-      <button onClick={onClick} css={pbutton}>{children}</button>
-      {/* <button css={pbutton}>{children}</button> */}
+      <button onClick={onClick} css={Button}>{children}</button>
     </>
   )
 })

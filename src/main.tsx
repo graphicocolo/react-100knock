@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Global } from "@emotion/react"
-import 'normalize.css'
 import { RouterProvider } from 'react-router-dom'
 
 import { globalStyle } from '@/settings/GlobalStyes'
